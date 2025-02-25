@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://cryyyli0fj2de"]
+
+[ext_resource type="Script" path="res://entities/runner.gd" id="1_e43v1"]
+[ext_resource type="Texture2D" uid="uid://cytttfx3sky7h" path="res://icon.svg" id="2_ln6ik"]
+[ext_resource type="PackedScene" uid="uid://dbkhvb1if7255" path="res://components/physics/movement/gravity/gravity_component.tscn" id="3_hbox6"]
+[ext_resource type="PackedScene" uid="uid://cu6vpm6rwxbwc" path="res://components/physics/movement/jump/jump.tscn" id="4_0hg38"]
+[ext_resource type="PackedScene" uid="uid://b5q8wrq31py1o" path="res://components/physics/movement/flap/flap.tscn" id="5_kduyb"]
+[ext_resource type="PackedScene" uid="uid://cgvglrteapccb" path="res://components/physics/movement/fly/fly.tscn" id="6_5urth"]
+[ext_resource type="PackedScene" uid="uid://dc72pc552ifot" path="res://components/physics/movement/flip/flip.tscn" id="7_l2qr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8c62"]
+size = Vector2(127, 128)
+
+[node name="Runner" type="CharacterBody2D" node_paths=PackedStringArray("move_component")]
+script = ExtResource("1_e43v1")
+move_component = NodePath("MoveComponents/Flip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ln6ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_w8c62")
+
+[node name="GravityComponent" parent="." instance=ExtResource("3_hbox6")]
+
+[node name="MoveComponents" type="Node" parent="."]
+
+[node name="Jump" parent="MoveComponents" instance=ExtResource("4_0hg38")]
+
+[node name="Flap" parent="MoveComponents" instance=ExtResource("5_kduyb")]
+
+[node name="Fly" parent="MoveComponents" instance=ExtResource("6_5urth")]
+
+[node name="Flip" parent="MoveComponents" instance=ExtResource("7_l2qr2")]

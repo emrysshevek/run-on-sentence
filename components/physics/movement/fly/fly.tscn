@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgvglrteapccb"]
+
+[ext_resource type="Script" path="res://components/physics/movement/fly/fly.gd" id="1_ltalq"]
+
+[node name="Fly" type="Node"]
+script = ExtResource("1_ltalq")

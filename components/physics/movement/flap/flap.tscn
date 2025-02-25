@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5q8wrq31py1o"]
+
+[ext_resource type="Script" path="res://components/physics/movement/flap/flap.gd" id="1_cpkev"]
+
+[node name="Flap" type="Node"]
+script = ExtResource("1_cpkev")
