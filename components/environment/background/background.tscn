@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jukwic7a7qd7"]
+
+[ext_resource type="Script" path="res://components/environment/background/background.gd" id="1_gpwy4"]
+[ext_resource type="Texture2D" uid="uid://cytttfx3sky7h" path="res://icon.svg" id="1_in7xm"]
+
+[node name="Background" type="Parallax2D"]
+repeat_size = Vector2(1920, 0)
+script = ExtResource("1_gpwy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_in7xm")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://2ydv2at4wr5f"]
+
+[ext_resource type="Texture2D" uid="uid://cytttfx3sky7h" path="res://icon.svg" id="1_572bb"]
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_vt0x2"]
+[ext_resource type="Script" path="res://components/environment/background/background.gd" id="2_k2cab"]
+[ext_resource type="PackedScene" uid="uid://cryyyli0fj2de" path="res://entities/runner/runner.tscn" id="2_xnrhb"]
+[ext_resource type="PackedScene" uid="uid://hr5lunkbnksl" path="res://entities/objects/letter/letter.tscn" id="4_11ru7"]
+[ext_resource type="PackedScene" uid="uid://c5gyosbvs6v3h" path="res://components/spawner/text_spawner.tscn" id="6_mk78k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brh35"]
+size = Vector2(1937, 121)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_vt0x2")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Background" type="Parallax2D" parent="Environment"]
+repeat_size = Vector2(1920, 0)
+script = ExtResource("2_k2cab")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Background"]
+position = Vector2(960.5, 1008)
+scale = Vector2(15.1172, 0.9375)
+texture = ExtResource("1_572bb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Environment/Background"]
+position = Vector2(969, 60.0001)
+scale = Vector2(15.1172, 0.9375)
+texture = ExtResource("1_572bb")
+
+[node name="Floor" type="StaticBody2D" parent="Environment"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor"]
+position = Vector2(958.5, 1011.5)
+shape = SubResource("RectangleShape2D_brh35")
+
+[node name="Ceiling" type="StaticBody2D" parent="Environment"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ceiling"]
+position = Vector2(966, 60)
+shape = SubResource("RectangleShape2D_brh35")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Letter" parent="Objects" instance=ExtResource("4_11ru7")]
+position = Vector2(1679, 870)
+value = "w"
+
+[node name="Runner" parent="." instance=ExtResource("2_xnrhb")]
+position = Vector2(461, 759)
+
+[node name="TextSpawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("6_mk78k")]
+position = Vector2(1754, 497)
+text = "hey carter look at me go!!!!"
+spawn_parent = NodePath("../Objects")

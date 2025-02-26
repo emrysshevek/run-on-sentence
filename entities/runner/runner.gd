@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Runner extends CharacterBody2D
 
 @export var move_component: MovementComponent
 

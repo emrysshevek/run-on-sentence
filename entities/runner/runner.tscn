@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cryyyli0fj2de"]
 
-[ext_resource type="Script" path="res://entities/runner.gd" id="1_e43v1"]
+[ext_resource type="Script" path="res://entities/runner/runner.gd" id="1_e43v1"]
 [ext_resource type="Texture2D" uid="uid://cytttfx3sky7h" path="res://icon.svg" id="2_ln6ik"]
-[ext_resource type="PackedScene" uid="uid://dbkhvb1if7255" path="res://components/physics/movement/gravity/gravity_component.tscn" id="3_hbox6"]
+[ext_resource type="PackedScene" uid="uid://dbkhvb1if7255" path="res://components/physics/gravity/gravity_component.tscn" id="3_hbox6"]
 [ext_resource type="PackedScene" uid="uid://cu6vpm6rwxbwc" path="res://components/physics/movement/jump/jump.tscn" id="4_0hg38"]
 [ext_resource type="PackedScene" uid="uid://b5q8wrq31py1o" path="res://components/physics/movement/flap/flap.tscn" id="5_kduyb"]
 [ext_resource type="PackedScene" uid="uid://cgvglrteapccb" path="res://components/physics/movement/fly/fly.tscn" id="6_5urth"]
@@ -12,6 +12,8 @@
 size = Vector2(127, 128)
 
 [node name="Runner" type="CharacterBody2D" node_paths=PackedStringArray("move_component")]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_e43v1")
 move_component = NodePath("MoveComponents/Flip")
 

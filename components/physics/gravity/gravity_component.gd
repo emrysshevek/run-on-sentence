@@ -1,6 +1,6 @@
 class_name GravityComponent extends PhysicsComponent
 
-@export var max_fall_speed: float = 500
+@export var max_fall_speed: float = 1000
 
 var gravity_scale: float = 1
 
