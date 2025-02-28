@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dsro4xtvfmxyn"]
+[gd_resource type="Resource" script_class="Settings" load_steps=2 format=3 uid="uid://dsro4xtvfmxyn"]
 
-[ext_resource type="Script" path="res://components/Globals/Global/settings.gd" id="1_3y2vt"]
+[ext_resource type="Script" path="res://components/globals/global/settings.gd" id="1_3y2vt"]
 
 [resource]
 script = ExtResource("1_3y2vt")

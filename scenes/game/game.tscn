@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://2ydv2at4wr5f"]
+[gd_scene load_steps=7 format=3 uid="uid://2ydv2at4wr5f"]
 
 [ext_resource type="Texture2D" uid="uid://cytttfx3sky7h" path="res://icon.svg" id="1_572bb"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_vt0x2"]
 [ext_resource type="Script" path="res://components/environment/background/background.gd" id="2_k2cab"]
 [ext_resource type="PackedScene" uid="uid://cryyyli0fj2de" path="res://entities/runner/runner.tscn" id="2_xnrhb"]
-[ext_resource type="PackedScene" uid="uid://hr5lunkbnksl" path="res://entities/objects/letter/letter.tscn" id="4_11ru7"]
 [ext_resource type="PackedScene" uid="uid://c5gyosbvs6v3h" path="res://components/spawner/text_spawner.tscn" id="6_mk78k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brh35"]
@@ -47,14 +46,19 @@ shape = SubResource("RectangleShape2D_brh35")
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="Letter" parent="Objects" instance=ExtResource("4_11ru7")]
-position = Vector2(1679, 870)
-value = "w"
-
 [node name="Runner" parent="." instance=ExtResource("2_xnrhb")]
 position = Vector2(461, 759)
 
 [node name="TextSpawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("6_mk78k")]
-position = Vector2(1754, 497)
+position = Vector2(2085, 318)
 text = "hey carter look at me go!!!!"
 spawn_parent = NodePath("../Objects")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 144.0
+offset_right = 474.0
+offset_bottom = 394.0
+text = "FPS: "

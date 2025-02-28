@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bty35bavaxqfe"]
 
-[ext_resource type="Script" path="res://components/Globals/Global/global.gd" id="1_7tghd"]
-[ext_resource type="Script" path="res://components/Globals/Global/settings.gd" id="2_ydlnc"]
+[ext_resource type="Script" path="res://components/globals/global/global.gd" id="1_7tghd"]
+[ext_resource type="Script" path="res://components/globals/global/settings.gd" id="2_ydlnc"]
 
 [sub_resource type="Resource" id="Resource_02a0v"]
 script = ExtResource("2_ydlnc")
-speed = 400.0
+speed = 600.0
 font_size = 25
 
 [node name="Global" type="Node"]

@@ -13,18 +13,29 @@ config_version=5
 config/name="Run On Sentence"
 run/main_scene="res://scenes/game/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-InputManager="*res://components/Globals/Input/InputManager.tscn"
-Global="*res://components/Globals/Global/global.tscn"
+InputManager="*res://components/globals/input/InputManager.tscn"
+Global="*res://components/globals/global/global.tscn"
+
+[debug]
+
+settings/stdout/print_fps=true
+settings/stdout/print_gpu_profile=true
+settings/stdout/verbose_stdout=true
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+
+[global_group]
+
+runner=""
 
 [input]
 

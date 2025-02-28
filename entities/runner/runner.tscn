@@ -11,11 +11,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8c62"]
 size = Vector2(127, 128)
 
-[node name="Runner" type="CharacterBody2D" node_paths=PackedStringArray("move_component")]
+[node name="Runner" type="CharacterBody2D" node_paths=PackedStringArray("move_component") groups=["runner"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_e43v1")
-move_component = NodePath("MoveComponents/Flip")
+move_component = NodePath("MoveComponents/Jump")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ln6ik")

@@ -8,6 +8,8 @@ signal collected(which_letter: Letter)
 @onready var label: Label = $Label
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
+var size: Vector2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if len(value) > 1:
@@ -19,8 +21,10 @@ func _ready() -> void:
 
 
 func _resize() -> void:
-	shape.radius = label.size.x
-	screen_notifier.rect = Rect2(label.size.x / 2, label.size.y / 2, label.size.x, label.size.y)
+	size = label.size
+	print(value, ": ", size)
+	shape.radius = size.x / 2
+	screen_notifier.rect = Rect2(size.x / 2, size.y / 2, size.x, size.y)
 
 
 func _on_body_entered(body: Node2D) -> void:

@@ -11,6 +11,10 @@ var current_actions: Dictionary
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
+	_buffer_actions()
+	
+	
+func _buffer_actions() -> void:
 	current_actions = {}
 
 	for action in InputMap.get_actions():
